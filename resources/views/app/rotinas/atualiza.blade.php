@@ -45,7 +45,7 @@
                       </div>
                       {{ csrf_field() }}
                       <div class="form-buttons-w">
-                        {!! Form::submit('Atualizar', null, ['class' => 'btn btn-primary']) !!}
+                        {!! Form::submit('Atualizar', ['class' => 'btn btn-primary']) !!}
                       </div>
                       {!! Form::close() !!}
                   </div>
