@@ -53,7 +53,7 @@
                 <span>Visão Geral</span></a>
             </li>
             <li>
-              <a href="mytasks.html">
+              <a href="{{ route('tarefas.index') }}">
                 <div class="icon-w">
                   <div class="os-icon os-icon-pencil-1"></div>
                 </div>
@@ -82,7 +82,7 @@
               </ul>
             </li>
             <li class="has-sub-menu">
-              <a href="#">
+              <a href="{{ route('relatorios.index') }}">
                 <div class="icon-w">
                   <div class="os-icon os-icon-newspaper"></div>
                 </div>

@@ -21,6 +21,11 @@ Route::post('rotinas/criar', 'RotinasController@criar')->name('rotinas.criar');
 Route::get('/rotinas/atualiza/{id}', 'RotinasController@atualiza')->name('rotinas.atualiza');
 Route::put('/rotinas/atualizar/{id}', 'RotinasController@atualizar')->name('rotinas.atualizar');
 
+Route::get('/tarefas', 'TarefasController@index')->name('tarefas.index');
+
+Route::get('/relatorios', 'RelatoriosController@index')->name('relatorios.index');
+
+
 
 Auth::routes();
 

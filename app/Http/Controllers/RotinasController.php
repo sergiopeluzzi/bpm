@@ -14,7 +14,7 @@ class RotinasController extends Controller
 
   public function index()
   {
-      $rotinaView = $this->rotinaDb->paginate(5);
+      $rotinaView = $this->rotinaDb->paginate(10);
       return view('app.rotinas.index')->with('rotinaView', $rotinaView);
   }
 
