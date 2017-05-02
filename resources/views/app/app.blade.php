@@ -18,6 +18,11 @@
   <link href="{{ asset('app/bower_components/datatables/media/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
   <link href="{{ asset('app/bower_components/fullcalendar/dist/fullcalendar.min.css') }}" rel="stylesheet">
   <link href="{{ asset('app/css/main.css') }}" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('app/assets/css/form-builder.css') }}">
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('app/assets/css/form-render.css') }}">
+  <link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.1/jquery.rateyo.min.css">
+
 </head>
 
 <body>
@@ -127,6 +132,13 @@
   <script src="{{ asset('app/bower_components/datatables/media/js/dataTables.bootstrap4.min.js') }}"></script>
   <script src="{{ asset('app/bower_components/fullcalendar/dist/fullcalendar.min.js') }}"></script>
   <script src="{{ asset('app/js/main.js') }}"></script>
+
+  <script src="{{ asset('app/assets/js/vendor.min.js') }}"></script>
+  <script src="{{ asset('app/assets/js/form-builder.min.js') }}"></script>
+  <script src="{{ asset('app/assets/js/form-render.min.js') }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.1/jquery.rateyo.min.js"></script>
+  <script src="{{ asset('app/assets/js/demo.js') }}"></script>
+
 </body>
 
 </html>
