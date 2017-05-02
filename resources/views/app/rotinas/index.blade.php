@@ -87,7 +87,7 @@
                               {{ $r->id }}
                             </td>
                             <td>
-                              {{ $r->nome }}
+                              <a href="{{ route('rotinas.tarefas') }}">{{ $r->nome }}</a>
                             </td>
                             <td>
                               {{ $r->descricao }}

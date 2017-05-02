@@ -20,6 +20,9 @@ Route::get('/rotinas/nova', 'RotinasController@nova')->name('rotinas.nova');
 Route::post('rotinas/criar', 'RotinasController@criar')->name('rotinas.criar');
 Route::get('/rotinas/atualiza/{id}', 'RotinasController@atualiza')->name('rotinas.atualiza');
 Route::put('/rotinas/atualizar/{id}', 'RotinasController@atualizar')->name('rotinas.atualizar');
+Route::get('/rotinas/tarefas', 'RotinasController@tarefas')->name('rotinas.tarefas');
+Route::get('/rotinas/tarefas/campos', 'RotinasController@campos')->name('rotinas.campos');
+
 
 Route::get('/tarefas', 'TarefasController@index')->name('tarefas.index');
 

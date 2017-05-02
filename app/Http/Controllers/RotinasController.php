@@ -39,4 +39,12 @@ class RotinasController extends Controller
       $rotinaAtualizar->update($dadosForm);
       return redirect()->route('rotinas.index');
   }
+
+  public function tarefas() {
+      return view('app.rotinas.tarefas');
+  }
+
+  public function campos() {
+      return view('app.rotinas.campos');
+  }
 }
