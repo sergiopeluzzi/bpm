@@ -17,7 +17,7 @@ class CreateRotinasTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->text('descricao');
-            $table->integer('id_admin');
+            $table->integer('id_admin'); //Remover
             $table->boolean('status');
             $table->timestamps();
         });

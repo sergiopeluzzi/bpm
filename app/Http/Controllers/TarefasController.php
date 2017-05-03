@@ -25,4 +25,18 @@ class TarefasController extends Controller
     {
         return view('app.tarefas.index');
     }
+
+    public function nova()
+    {
+        return view('app.tarefas.nova');
+    }
+
+    public function idTarefa()
+    {
+        return view('app.tarefas.idTarefa');
+    }
+    public function idPassoDaTarefa()
+    {
+        return view('app.tarefas.idPassoDaTarefa');
+    }
 }
