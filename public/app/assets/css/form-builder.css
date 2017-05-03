@@ -180,8 +180,8 @@ textarea {
   .btn-group > .btn:focus,
   .btn-group > .btn:hover {
     z-index: 2; }
-
-/*.btn {
+/*
+.btn {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
@@ -218,6 +218,7 @@ textarea {
   .btn.active, .btn.btn-active, .btn:active {
     background-image: none; }
 */
+/*
 .input-group .form-control:last-child,
 .input-group-addon:last-child,
 .input-group-btn:first-child > .btn-group:not(:first-child) > .btn,
@@ -277,7 +278,7 @@ textarea.form-control {
 .form-group {
   margin-left: 0px;
   margin-bottom: 15px; }
-
+*/
 .btn,
 .form-control {
   background-image: none; }
