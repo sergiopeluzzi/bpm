@@ -5796,8 +5796,8 @@ html {
 
 body {
   min-height: 100%;
-  background: -webkit-linear-gradient(top left, #D7BBEA, #65A8F1);
-  background: linear-gradient(to bottom right, #D7BBEA, #65A8F1);
+  background: -webkit-linear-gradient(top left, #1ABDEF, #0086C9);
+  background: linear-gradient(to bottom right, #1ABDEF, #0086C9);
   padding: 50px; }
 
 .all-wrapper {
@@ -5866,7 +5866,7 @@ body {
   .menu-w .logo-w .logo {
     display: inline-block; }
   .menu-w .logo-w img {
-    width: 40px;
+    width: 170px;
     height: auto;
     display: inline-block;
     vertical-align: middle; }
@@ -5928,7 +5928,7 @@ body {
             -webkit-transform: translateX(5px);
                     transform: translateX(5px); } }
     .menu-w ul.main-menu > li .icon-w {
-      color: #308af4;
+      color: #0086C9;
       font-size: 27px;
       display: block;
       padding: 1rem;
@@ -5997,7 +5997,7 @@ ul.sub-menu {
     z-index: 1; }
     .element-wrapper .element-header:after {
       content: "";
-      background-color: #4390eb;
+      background-color: #0086C9;
       width: 22px;
       height: 6px;
       border-radius: 2px;
@@ -6556,7 +6556,7 @@ ul.sub-menu {
     padding-left: 80px; }
     .auth-box-w .auth-header:after {
       content: "";
-      background-color: #4390eb;
+      background-color: #0086C9;
       width: 32px;
       height: 7px;
       border-radius: 2px;
