@@ -5,9 +5,9 @@
   <title>Atarefado | A maneira mais simples e rápida de gerenciar as rotinas da sua empresa</title>
   <meta charset="utf-8">
   <meta content="ie=edge" http-equiv="x-ua-compatible">
-  <meta content="template language" name="keywords">
-  <meta content="Tamerlan Soziev" name="author">
-  <meta content="Admin dashboard html template" name="description">
+  <meta content="pt-BR" name="keywords">
+  <meta content="Rafael Mundel" name="author">
+  <meta content="Atarefado | A maneira mais simples e rápida de gerenciar as rotinas da sua empresa" name="description">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="{{ asset('app/favicon.png') }}" rel="shortcut icon">
   <link href="{{ asset('app/apple-touch-icon.png') }}" rel="apple-touch-icon">
