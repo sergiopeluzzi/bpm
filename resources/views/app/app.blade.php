@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Workflow</title>
+  <title>Atarefado | A maneira mais simples e rápida de gerenciar as rotinas da sua empresa</title>
   <meta charset="utf-8">
   <meta content="ie=edge" http-equiv="x-ua-compatible">
   <meta content="template language" name="keywords">
@@ -30,7 +30,7 @@
     <div class="layout-w">
       <div class="menu-w menu-activated-on-click">
         <div class="logo-w">
-          <a class="logo" href="{{ route('home') }}"><img src="img/logo.png"><span>Workflow</span></a>
+          <a class="logo" href="{{ route('home') }}"><img src="{{ asset('app/img/logo.png') }}"></a>
           <div class="mobile-menu-trigger">
             <div class="os-icon os-icon-hamburger-menu-1"></div>
           </div>
@@ -38,7 +38,7 @@
         <div class="menu-and-user">
           <div class="logged-user-w">
             <div class="avatar-w">
-              <img alt="" src="img/avatar1.jpg">
+              <img alt="" src="{{ asset('app/img/avatar1.jpg') }}">
             </div>
             <div class="logged-user-info-w">
               <div class="logged-user-name">
