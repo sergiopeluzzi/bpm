@@ -46,7 +46,11 @@ class RotinasController extends Controller
 
   public function tarefas($id, tarefa $tarefas, rotinaTarefas $rotinaTarefas) {
 
-      $rt = $rotinaTarefas->where('rotina_id', $id)->get();
+      $rt = $rotinaTarefas->where('rotina_id', $id);
+
+      foreach ($rt->get()->all() as $r) {
+          $tarefa[] = $r->tarefa_id;
+      }
 
 
 
