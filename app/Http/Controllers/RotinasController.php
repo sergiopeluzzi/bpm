@@ -49,4 +49,8 @@ class RotinasController extends Controller
   public function campos() {
       return view('app.rotinas.campos');
   }
+
+  public function novaTarefa() {
+      return view('app.rotinas.tarefa_nova');
+  }
 }
