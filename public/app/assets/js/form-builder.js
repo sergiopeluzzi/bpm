@@ -757,7 +757,7 @@ $export.P = 8;   // proto
 $export.B = 16;  // bind
 $export.W = 32;  // wrap
 $export.U = 64;  // safe
-$export.R = 128; // real proto method for `library` 
+$export.R = 128; // real proto method for `library`
 module.exports = $export;
 },{"./_core":43,"./_ctx":45,"./_global":54,"./_hide":56}],52:[function(require,module,exports){
 module.exports = function(exec){
