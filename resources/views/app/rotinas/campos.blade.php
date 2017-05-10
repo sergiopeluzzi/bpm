@@ -74,7 +74,6 @@
                       </select>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
@@ -82,4 +81,12 @@
         </div>
       </div>
 
+@endsection
+
+@section('form_builder')
+  <script src="{{ asset('app/assets/js/vendor.min.js') }}"></script>
+  <script src="{{ asset('app/assets/js/form-builder.min.js') }}"></script>
+  <script src="{{ asset('app/assets/js/form-render.min.js') }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.1/jquery.rateyo.min.js"></script>
+  <script src="{{ asset('app/assets/js/demo.js') }}"></script>
 @endsection

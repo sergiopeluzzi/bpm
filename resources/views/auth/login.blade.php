@@ -1,68 +1,63 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Atarefado | A maneira mais simples e rápida de gerenciar as rotinas da sua empresa</title>
+  <meta charset="utf-8">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <meta content="pt-BR" name="keywords">
+  <meta content="Rafael Mundel" name="author">
+  <meta content="Atarefado | A maneira mais simples e rápida de gerenciar as rotinas da sua empresa" name="description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="{{ asset('app/favicon.png') }}" rel="shortcut icon">
+  <link href="{{ asset('app/apple-touch-icon.png') }}" rel="apple-touch-icon">
+  <link href="{{ asset('app/bower_components/select2/dist/css/select2.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('app/bower_components/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
+  <link href="{{ asset('app/bower_components/dropzone/dist/dropzone.css" rel="stylesheet') }}">
+  <link href="{{ asset('app/bower_components/datatables/media/css/jquery.dataTables.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('app/bower_components/datatables/media/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('app/bower_components/fullcalendar/dist/fullcalendar.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('app/css/main.css') }}" rel="stylesheet">
+</head>
+  <body class="auth-wrapper">
+    <div class="all-wrapper with-pattern">
+      <div class="auth-box-w">
+        <div class="logo-w">
+          <a href="/"><img alt="" src="{{ asset('app/img/logo.png') }}"></a>
         </div>
+        <h4 class="auth-header">
+          Login
+        </h4>
+        <form method="POST" action="{{ route('login') }}">
+          {{ csrf_field() }}
+        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+            <label for="">E-mail</label>
+            <input id="email" type="email" class="form-control" name="email" placeholder="Enter your username" value="{{ old('email') }}" required autofocus>
+            @if ($errors->has('email'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('email') }}</strong>
+                </span>
+            @endif
+            <div class="pre-icon os-icon os-icon-user-male-circle"></div>
+          </div>
+
+          <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+            <label for="">Password</label>
+            <input id="password" type="password" class="form-control" placeholder="Enter your password" name="password" required>
+            @if ($errors->has('password'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('password') }}</strong>
+                </span>
+            @endif
+            <div class="pre-icon os-icon os-icon-fingerprint"></div>
+          </div>
+          <div class="buttons-w">
+            <button class="btn btn-primary">Entrar</button>
+            <div class="form-check-inline">
+              <label class="form-check-label"><input class="form-check-input" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>Lembrar-me</label>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-</div>
-@endsection
+  </body>
+</html>

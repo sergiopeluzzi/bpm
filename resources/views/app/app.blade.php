@@ -47,6 +47,10 @@
               <div class="logged-user-role">
                 Administrador
               </div>
+              <div class="logged-user-role">
+                <a href="{{ route('sair') }}">
+                  <span>Sair</span></a>
+              </div>
             </div>
           </div>
           <ul class="main-menu">
@@ -104,13 +108,6 @@
                 </li>
               </ul>
             </li>
-            <li>
-              <a href="calendar.html">
-                <div class="icon-w">
-                  <div class="os-icon os-icon-arrow-right"></div>
-                </div>
-                <span>Logout</span></a>
-            </li>
           </ul>
         </div>
       </div>
@@ -133,11 +130,7 @@
   <script src="{{ asset('app/bower_components/fullcalendar/dist/fullcalendar.min.js') }}"></script>
   <script src="{{ asset('app/js/main.js') }}"></script>
 
-  <script src="{{ asset('app/assets/js/vendor.min.js') }}"></script>
-  <script src="{{ asset('app/assets/js/form-builder.min.js') }}"></script>
-  <script src="{{ asset('app/assets/js/form-render.min.js') }}"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.1/jquery.rateyo.min.js"></script>
-  <script src="{{ asset('app/assets/js/demo.js') }}"></script>
+  @yield ('form_builder')
 
 </body>
 

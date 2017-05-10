@@ -31,6 +31,10 @@ Route::get('/tarefas/idPassoDaTarefa', 'TarefasController@idPassoDaTarefa')->nam
 Route::get('/relatorios', 'RelatoriosController@index')->name('relatorios.index');
 
 
+Route::get('/sair', function () {
+    Auth::logout();
+    return redirect()->route('login');
+})->name('sair');
 
 Auth::routes();
 
