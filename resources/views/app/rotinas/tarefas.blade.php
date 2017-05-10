@@ -27,7 +27,7 @@
                     Nome da Rotina
                   </h6>
                   <div class="element-box">
-                    <form id="formValidate" action="{{ route('rotinas.campos') }}" novalidate="true">
+                    <form id="formValidate" action="{{ route('rotinas.campos', $id) }}" novalidate="true">
                       <h5 class="form-header">
                         Nova Tarefa
                       </h5>

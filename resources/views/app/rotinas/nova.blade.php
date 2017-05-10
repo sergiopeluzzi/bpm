@@ -25,21 +25,25 @@
                     <form id="formValidate" action="{{ route('rotinas.criar') }}" novalidate="true" method="post">
 
                       <div class="form-group ">
-                        <label for=""> Nome da rotina</label><input class="form-control" data-error="Por favor digite um nome para a rotina" placeholder="Nome da Rotina" required="required" type="text" name="nome">
+                        <label for=""> Nome da rotina</label>
+                        <input class="form-control" data-error="Por favor digite um nome para a rotina" placeholder="Nome da Rotina" required="required" type="text" name="nome">
 
                       </div>
                       <div class="form-group ">
-                        <label for=""> Descrição</label><input class="form-control" data-error="Por favor digite um nome para a rotina" placeholder="Breve Descrição da Rotina" required="required" type="text" name="descricao">
-
-                      </div>
-
-                      <div class="form-group ">
-                        <label for=""> ID Admin</label><input class="form-control" data-error="Por favor digite um nome para a rotina" placeholder="Breve Descrição da Rotina" required="required" type="text" name="id_admin" value="1">
+                        <label for=""> Descrição</label>
+                        <input class="form-control" data-error="Por favor digite um nome para a rotina" placeholder="Breve Descrição da Rotina" required="required" type="text" name="descricao">
 
                       </div>
 
                       <div class="form-group ">
-                        <label for="">Status</label><input class="form-control" data-error="Por favor digite um nome para a rotina" placeholder="Breve Descrição da Rotina" required="required" type="text" name="status" value="1">
+                        <label for=""> ID Admin</label>
+                        <input class="form-control" data-error="Por favor digite um nome para a rotina" placeholder="Breve Descrição da Rotina" required="required" type="text" name="id_admin" value="1">
+
+                      </div>
+
+                      <div class="form-group ">
+                        <label for="">Status</label>
+                        <input class="form-control" data-error="Por favor digite um nome para a rotina" placeholder="Breve Descrição da Rotina" required="required" type="text" name="status" value="1">
 
                       </div>
                       {{ csrf_field() }}

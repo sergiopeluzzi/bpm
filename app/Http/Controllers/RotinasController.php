@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\rotina;
 
@@ -18,8 +19,9 @@ class RotinasController extends Controller
       return view('app.rotinas.index')->with('rotinaView', $rotinaView);
   }
 
-  public function nova() {
-      return view('app.rotinas.nova');
+  public function nova(User $user) {
+
+      return view('app.rotinas.nova')->with('users', $user->all());
   }
 
   public function criar(Request $request) {
@@ -40,8 +42,8 @@ class RotinasController extends Controller
       return redirect()->route('rotinas.index');
   }
 
-  public function tarefas() {
-      return view('app.rotinas.tarefas');
+  public function tarefas($id) {
+      return view('app.rotinas.tarefas')->with('id', $id);
   }
 
   public function campos() {
