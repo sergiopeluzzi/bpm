@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
       i18n: {
         locale: 'pt-BR'
       },
-      disabledActionButtons: ['data'],
+      // disabledActionButtons: ['data'],
       controlOrder: [
         'text',
         'textarea'

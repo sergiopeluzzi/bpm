@@ -22,7 +22,7 @@
     <div class="all-wrapper with-pattern">
       <div class="auth-box-w">
         <div class="logo-w">
-          <a href="/"><img alt="" src="{{ asset('app/img/logo.png') }}"></a>
+          <a href="/"><img alt="" src="{{ asset('app/img/logo_big.png') }}"></a>
         </div>
         <h4 class="auth-header">
           Login
