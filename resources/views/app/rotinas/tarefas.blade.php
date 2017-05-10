@@ -21,7 +21,7 @@
         <div class="element-wrapper">
           <div class="element-actions">
             <div class="el-buttons-list full-width">
-              <a class="btn btn-white btn-sm" href="{{ route('rotinas.tarefa_nova', $id )}}"><i class="os-icon os-icon-delivery-box-2"></i><span>Nova tarefa</span></a>
+              <a class="btn btn-white btn-sm" href="{{ route('rotinas.tarefa_nova', $data['idrotina'] )}}"><i class="os-icon os-icon-delivery-box-2"></i><span>Nova tarefa</span></a>
             </div>
           </div>
           <h6 class="element-header">
@@ -85,7 +85,8 @@
                   </tr>
                 </thead>
                 <tbody>
-                                            <tr>
+                  @foreach($data['tarefas'] as $d)
+                  <tr>
                     <td class="text-center">
                       <input class="form-control" type="checkbox">
                     </td>
@@ -93,10 +94,10 @@
                       1
                     </td>
                     <td>
-                      <a href="http://localhost:8000/rotinas/1/tarefas">Rotina de Teste</a>
+                      <a href="{{ route('rotinas.tarefa_nova', $data['idrotina']) }}">{{ $d->nome }}</a>
                     </td>
                     <td>
-                      Descrição
+                      {{ $d->descricao }}
                     </td>
                     <td class="text-right">
                       1
@@ -105,10 +106,11 @@
                                                     <div class="status-pill green" data-title="Complete" data-toggle="tooltip"></div>
                                                   </td>
                     <td class="row-actions">
-                      <a href="http://localhost:8000/rotinas/atualiza/1"><i class="os-icon os-icon-pencil-2"></i></a>
+                      <a href="#"><i class="os-icon os-icon-pencil-2"></i></a>
                     </td>
                   </tr>
-                                          </tbody>
+                  @endforeach
+                </tbody>
               </table>
             </div>
 

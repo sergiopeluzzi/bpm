@@ -25,7 +25,7 @@
                               Nova Tarefa
                             </h6>
           <div class="element-box">
-            <form id="formValidate" action="" novalidate="true" method="post">
+            <form id="formValidate" action="{{ route('rotinas.salvar_nova_tarefa', $idrotina) }}" novalidate="true" method="post">
 
               <div class="form-group ">
                 <label for=""> Nome da tarefa</label>
