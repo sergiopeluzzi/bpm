@@ -17,7 +17,6 @@ class CreateTarefasTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->text('descricao');
-            $table->integer('id_admin'); //Remover
             $table->timestamps();
         });
     }
