@@ -2,139 +2,103 @@
 
 @section('content')
 
+<header class="section-header">
+  <div class="tbl">
+    <div class="tbl-row">
+      <div class="tbl-cell">
 
-<ul class="breadcrumb">
-  <li class="breadcrumb-item">
-    <a href="dashboard.html">Início</a>
-  </li>
-  <li class="breadcrumb-item">
-    <span href="routines.html">Rotinas</span>
-  </li>
-  <li class="breadcrumb-item">
-    <span href="routines.html">Nome da Rotina</span>
-  </li>
-</ul>
-<div class="content-i">
-  <div class="content-box">
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="element-wrapper">
-          <div class="element-actions">
-            <div class="el-buttons-list full-width">
-              <a class="btn btn-white btn-sm" href="{{ route('rotinas.tarefa_nova', $data['idrotina'] )}}"><i class="os-icon os-icon-delivery-box-2"></i><span>Nova tarefa</span></a>
-            </div>
-          </div>
-          <h6 class="element-header">
-                              Nome da Rotina
-                            </h6>
-          <div class="element-box">
-            <h6 class="element-header">
-                      Tarefas da Rotina
-                    </h6>
-            <div class="controls-above-table">
-              <div class="row">
-                <div class="col-sm-6">
-                  <a class="btn btn-sm btn-success" href="#">Habilitar</a><a class="btn btn-sm btn-warning" href="#">Desabilitar</a><a class="btn btn-sm btn-danger" href="#">Excluir</a>
-                  <a class="btn btn-sm btn-secondary" href="#">Imprimir</a>
-                </div>
-                <div class="col-sm-6">
-                  <form class="form-inline justify-content-sm-end">
-                    <input class="form-control form-control-sm rounded bright" placeholder="Pesquisar" type="text"><select class="form-control form-control-sm rounded bright">
-                      <option selected="selected" value="">
-                        Filtrar por Status
-                      </option>
-                      <option value="Pending">
-                        Habilitado
-                      </option>
-                      <option value="Active">
-                        Desabilitado
-                      </option>
-                      <option value="Active">
-                        Excluido
-                      </option>
-                    </select>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div class="table-responsive">
-              <table class="table table-bordered table-lg table-v2 table-striped">
-                <thead>
-                  <tr>
-                    <th class="text-center">
-                      <input class="form-control" type="checkbox">
-                    </th>
-                    <th>
-                      ID
-                    </th>
-                    <th>
-                      Nome da Tarefa
-                    </th>
-                    <th>
-                      Descrição
-                    </th>
-                    <th>
-                      Responsável
-                    </th>
-                    <th>
-                      Status
-                    </th>
-                    <th>
-                      Ações
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  @foreach($data['tarefas'] as $d)
-                  <tr>
-                    <td class="text-center">
-                      <input class="form-control" type="checkbox">
-                    </td>
-                    <td>
-                      1
-                    </td>
-                    <td>
-                      <a href="{{ route('rotinas.tarefa_nova', $data['idrotina']) }}">{{ $d->nome }}</a>
-                    </td>
-                    <td>
-                      {{ $d->descricao }}
-                    </td>
-                    <td class="text-right">
-                      1
-                    </td>
-                    <td class="text-center">
-                                                    <div class="status-pill green" data-title="Complete" data-toggle="tooltip"></div>
-                                                  </td>
-                    <td class="row-actions">
-                      <a href="#"><i class="os-icon os-icon-pencil-2"></i></a>
-                    </td>
-                  </tr>
-                  @endforeach
-                </tbody>
-              </table>
-            </div>
+          <a href="{{ route('rotinas.tarefa_nova', $data['idrotina'] )}}" class="btn btn-rounded btn-inline" style="position: fixed; margin-top:100px; top: 0px; right: 20px; z-index: 99;">
+            Nova tarefa
+          </a>
 
-            <div class="controls-below-table">
-
-              <div class="table-records-info">
-
-              </div>
-              <div class="table-records-pages">
-
-                <ul>
-
-
-
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+        <h3>Tarefas</h3>
+        <ol class="breadcrumb breadcrumb-simple">
+          <li><a href="{{ route('home') }}">Home</a></li>
+          <li><a href="{{ route('rotinas.index') }}">Rotinas</a></li>
+          <li><a href="">Nome da Rotina</a></li>
+          <li class="active">Tarefas</li>
+        </ol>
       </div>
     </div>
   </div>
-</div>
+</header>
 
+<section class="box-typical">
+    <header class="box-typical-header">
+      <div class="tbl-row">
+        <div class="tbl-cell tbl-cell-title">
+          <h3>99 rotinas encontradas</h3>
+        </div>
+        <div class="tbl-cell tbl-cell-action-bordered">
+          <button type="button" class="action-btn"><i class="font-icon font-icon-pencil"></i></button>
+        </div>
+        <div class="tbl-cell tbl-cell-action-bordered">
+          <button type="button" class="action-btn"><i class="font-icon font-icon-re"></i></button>
+        </div>
+        <div class="tbl-cell tbl-cell-action-bordered">
+          <button type="button" class="action-btn"><i class="font-icon font-icon-trash"></i></button>
+        </div>
+      </div>
+    </header>
+    <div class="box-typical-body">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th class="table-check">
+                <div class="checkbox checkbox-only">
+                  <input type="checkbox" id="table-check-head">
+                  <label for="table-check-head"></label>
+                </div>
+              </th>
+              <th>ID</th>
+              <th>Nome da rotina</th>
+              <th>Descrição</th>
+              <th class="table-icon-cell">
+                <i class="font-icon font-icon-heart"></i>
+              </th>
+              <th class="table-icon-cell">
+                <i class="font-icon font-icon-comment"></i>
+              </th>
+              <th>Criado em</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach($data['tarefas'] as $d)
+            <tr>
+              <td class="table-check">
+                <div class="checkbox checkbox-only">
+                  <input type="checkbox" id="table-check-1">
+                  <label for="table-check-1"></label>
+                </div>
+              </td>
+              <td>
+                {{ $d->id }}
+              </td>
+              <td>
+                <a href="">{{ $d->nome }}</a>
+                <span class="hint-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Help">?</span>
+              </td>
+              <td class="color-blue-grey-lighter">  {{ $d->descricao }}</td>
+              <td class="table-icon-cell">
+                <i class="font-icon font-icon-heart"></i>
 
+              </td>
+              <td class="table-icon-cell">
+                <i class="font-icon font-icon-comment"></i>
+                
+              </td>
+              <td class="table-date">6 minutes ago <i class="font-icon font-icon-clock"></i></td>
+              <td class="table-photo">
+                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Nicholas<br/>Barrett">
+              </td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+    </div><!--.box-typical-body-->
+  </section>
 
 @endsection
