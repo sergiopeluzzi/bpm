@@ -1,135 +1,110 @@
 @extends('app.app')
 
+@section('styles')
+
+@endsection
+
 @section('content')
+      <header class="section-header">
+				<div class="tbl">
+					<div class="tbl-row">
+						<div class="tbl-cell">
 
-        <ul class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="dashboard.html">Início</a>
-          </li>
-          <li class="breadcrumb-item">
-            <span href="routines.html">Rotinas</span>
-          </li>
-        </ul>
-        <div class="content-i">
-          <div class="content-box">
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="element-wrapper">
-                  <div class="element-actions">
-                    <div class="el-buttons-list full-width">
-                      <a class="btn btn-white btn-sm" href="{{ route('rotinas.nova') }}"><i class="os-icon os-icon-delivery-box-2"></i><span>Nova rotina</span></a>
-                    </div>
-                  </div>
-                  <h6 class="element-header">
-                                      Rotinas
-                                    </h6>
-                  <div class="element-box">
-                    <div class="controls-above-table">
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <a class="btn btn-sm btn-success" href="#">Habilitar</a><a class="btn btn-sm btn-warning" href="#">Desabilitar</a><a class="btn btn-sm btn-danger" href="#">Excluir</a>
-                          <a class="btn btn-sm btn-secondary" href="#">Imprimir</a>
-                        </div>
-                        <div class="col-sm-6">
-                          <form class="form-inline justify-content-sm-end">
-                            <input class="form-control form-control-sm rounded bright" placeholder="Pesquisar" type="text"><select class="form-control form-control-sm rounded bright">
-                              <option selected="selected" value="">
-                                Filtrar por Status
-                              </option>
-                              <option value="Pending">
-                                Habilitado
-                              </option>
-                              <option value="Active">
-                                Desabilitado
-                              </option>
-                              <option value="Active">
-                                Excluido
-                              </option>
-                            </select>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="table-responsive">
-                      <table class="table table-bordered table-lg table-v2 table-striped">
-                        <thead>
-                          <tr>
-                            <th class="text-center">
-                              <input class="form-control" type="checkbox">
-                            </th>
-                            <th>
-                              ID
-                            </th>
-                            <th>
-                              Nome da Rotina
-                            </th>
-                            <th>
-                              Descrição
-                            </th>
-                            <th>
-                              Responsável
-                            </th>
-                            <th>
-                              Status
-                            </th>
-                            <th>
-                              Ações
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          @foreach ($rotinaView as $r)
-                          <tr>
-                            <td class="text-center">
-                              <input class="form-control" type="checkbox">
-                            </td>
-                            <td>
-                              {{ $r->id }}
-                            </td>
-                            <td>
-                              <a href="{{ route('rotinas.tarefas', $r->id) }}">{{ $r->nome }}</a>
-                            </td>
-                            <td>
-                              {{ $r->descricao }}
-                            </td>
-                            <td class="text-right">
-                              {{ $r->id_admin }}
-                            </td>
-                            <td class="text-center">
-                              @if($r->status==1)
-                              <div class="status-pill green" data-title="Complete" data-toggle="tooltip"></div>
-                              @else
-                              <div class="status-pill red" data-title="Complete" data-toggle="tooltip"></div>
-                              @endif
-                            </td>
-                            <td class="row-actions">
-                              <a href="{{ route('rotinas.atualiza', $r->id) }}"><i class="os-icon os-icon-pencil-2"></i></a>
-                            </td>
-                          </tr>
-                          @endforeach
-                        </tbody>
-                      </table>
-                    </div>
+								<a href="{{ route('rotinas.nova') }}" class="btn btn-rounded btn-inline" style="position: fixed; margin-top:100px; top: 0px; right: 20px; z-index: 50;">
+	                Nova rotina
+	              </a>
 
-                    <div class="controls-below-table">
+							<h3>Rotinas</h3>
+							<ol class="breadcrumb breadcrumb-simple">
+								<li><a href="{{ route('home') }}">Home</a></li>
+								<li class="active">Rotinas</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</header>
 
-                      <div class="table-records-info">
+      <section class="box-typical">
+  				<header class="box-typical-header">
+  					<div class="tbl-row">
+  						<div class="tbl-cell tbl-cell-title">
+  							<h3>99 rotinas encontradas</h3>
+  						</div>
+  						<div class="tbl-cell tbl-cell-action-bordered">
+  							<button type="button" class="action-btn"><i class="font-icon font-icon-pencil"></i></button>
+  						</div>
+  						<div class="tbl-cell tbl-cell-action-bordered">
+  							<button type="button" class="action-btn"><i class="font-icon font-icon-re"></i></button>
+  						</div>
+  						<div class="tbl-cell tbl-cell-action-bordered">
+  							<button type="button" class="action-btn"><i class="font-icon font-icon-trash"></i></button>
+  						</div>
+  					</div>
+  				</header>
+  				<div class="box-typical-body">
+  					<div class="table-responsive">
+  						<table class="table table-hover">
+  							<thead>
+  								<tr>
+  									<th class="table-check">
+  										<div class="checkbox checkbox-only">
+  											<input type="checkbox" id="table-check-head">
+  											<label for="table-check-head"></label>
+  										</div>
+  									</th>
+                    <th>ID</th>
+  									<th>Nome da rotina</th>
+  									<th>Descrição</th>
+  									<th class="table-icon-cell">
+  										<i class="font-icon font-icon-heart"></i>
+  									</th>
+  									<th class="table-icon-cell">
+  										<i class="font-icon font-icon-comment"></i>
+  									</th>
+  									<th>Criado em</th>
+  									<th></th>
+  								</tr>
+  							</thead>
+  							<tbody>
+                  @foreach ($rotinaView as $r)
+  								<tr>
+  									<td class="table-check">
+  										<div class="checkbox checkbox-only">
+  											<input type="checkbox" id="table-check-1">
+  											<label for="table-check-1"></label>
+  										</div>
+  									</td>
+                    <td>
+  										{{ $r->id }}
+  									</td>
+  									<td>
+  										<a href="{{ route('rotinas.tarefas', $r->id) }}">{{ $r->nome }}</a>
+  										<span class="hint-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Help">?</span>
+  									</td>
+  									<td class="color-blue-grey-lighter">  {{ $r->descricao }}</td>
+  									<td class="table-icon-cell">
+  										<i class="font-icon font-icon-heart"></i>
+  										{{ $r->id_admin }}
+  									</td>
+  									<td class="table-icon-cell">
+  										<i class="font-icon font-icon-comment"></i>
+                      {{ $r->status }}
+  									</td>
+  									<td class="table-date">6 minutes ago <i class="font-icon font-icon-clock"></i></td>
+  									<td class="table-photo">
+  										<img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Nicholas<br/>Barrett">
+  									</td>
+  								</tr>
+                  @endforeach
+  							</tbody>
+  						</table>
+  					</div>
+  				</div><!--.box-typical-body-->
+  			</section>
 
-                      </div>
-                      <div class="table-records-pages">
 
-                        <ul>
+@endsection
 
-                        {{ $rotinaView->links() }}
-
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+@section('scripts')
 
 @endsection
