@@ -7,10 +7,6 @@
     <div class="tbl-row">
       <div class="tbl-cell">
 
-          <a href="{{ route('rotinas.tarefa_nova', $data['idrotina'] )}}" class="btn btn-rounded btn-inline" style="position: fixed; margin-top:100px; top: 0px; right: 20px; z-index: 99;">
-            Nova tarefa
-          </a>
-
         <h3>Tarefas</h3>
         <ol class="breadcrumb breadcrumb-simple">
           <li><a href="{{ route('home') }}">Home</a></li>
@@ -19,6 +15,12 @@
           <li class="active">Tarefas</li>
         </ol>
       </div>
+      <div class="tbl-cell tbl-cell-action button">
+    <a href="{{ route('rotinas.tarefa_nova', $data['idrotina'] )}}" class="btn btn-rounded btn-block">Nova tarefa</a>
+  </div>
+  <div class="tbl-cell tbl-cell-action button">
+<a href="" class="btn btn-rounded btn-block btn-secondary"><span class="font-icon font-icon-cogwheel"></span></a>
+</div>
     </div>
   </div>
 </header>
@@ -87,7 +89,7 @@
               </td>
               <td class="table-icon-cell">
                 <i class="font-icon font-icon-comment"></i>
-                
+
               </td>
               <td class="table-date">6 minutes ago <i class="font-icon font-icon-clock"></i></td>
               <td class="table-photo">

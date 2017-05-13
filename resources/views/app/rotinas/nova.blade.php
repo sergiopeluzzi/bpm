@@ -33,7 +33,7 @@
   					</div>
   					<div class="col-lg-6">
   						<fieldset class="form-group">
-  							<label class="form-label" for="exampleInputEmail1">Descrição da rotina</label>
+  							<label class="form-label semibold" for="exampleInputEmail1">Descrição da rotina</label>
   							<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite uma breve descrição para a rotina" name="descricao">
                 <small class="text-muted">We'll never share your email with anyone else.</small>
   						</fieldset>
