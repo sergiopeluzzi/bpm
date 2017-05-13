@@ -9,17 +9,15 @@
 				<div class="tbl">
 					<div class="tbl-row">
 						<div class="tbl-cell">
-
-								<a href="{{ route('rotinas.nova') }}" class="btn btn-rounded btn-inline" style="position: fixed; margin-top:100px; top: 0px; right: 20px; z-index: 50;">
-	                Nova rotina
-	              </a>
-
 							<h3>Rotinas</h3>
 							<ol class="breadcrumb breadcrumb-simple">
 								<li><a href="{{ route('home') }}">Home</a></li>
 								<li class="active">Rotinas</li>
 							</ol>
 						</div>
+            <div class="tbl-cell tbl-cell-action button">
+          <a href="{{ route('rotinas.nova') }}" class="btn btn-rounded btn-block">Nova rotina</a>
+        </div>
 					</div>
 				</div>
 			</header>
@@ -98,7 +96,9 @@
                   @endforeach
   							</tbody>
   						</table>
+
   					</div>
+
   				</div><!--.box-typical-body-->
   			</section>
 
