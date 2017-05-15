@@ -6,13 +6,10 @@
   <div class="tbl">
     <div class="tbl-row">
       <div class="tbl-cell">
-
-
-
         <h3>Nova tarefa</h3>
         <ol class="breadcrumb breadcrumb-simple">
           <li><a href="{{ route('home') }}">Home</a></li>
-          <li><a href="{{ route('rotinas.index') }}">Rotinas</a></li>
+          <li><a href="{{ route('rotinas.index') }}">Configurar Rotinas</a></li>
           <li><a href="">Nome da Rotina</a></li>
           <li class="active">Nova tarefa</li>
         </ol>

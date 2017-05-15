@@ -10,7 +10,7 @@
         <h3>Tarefas</h3>
         <ol class="breadcrumb breadcrumb-simple">
           <li><a href="{{ route('home') }}">Home</a></li>
-          <li><a href="{{ route('rotinas.index') }}">Rotinas</a></li>
+          <li><a href="{{ route('rotinas.index') }}">Configurar Rotinas</a></li>
           <li><a href="">Nome da Rotina</a></li>
           <li class="active">Tarefas</li>
         </ol>
@@ -79,7 +79,7 @@
                 {{ $d->id }}
               </td>
               <td>
-                <a href="">{{ $d->nome }}</a>
+                <a href="{{ route('rotinas.campos') }}">{{ $d->nome }}</a>
                 <span class="hint-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Help">?</span>
               </td>
               <td class="color-blue-grey-lighter">  {{ $d->descricao }}</td>

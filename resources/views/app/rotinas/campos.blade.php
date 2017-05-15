@@ -1,7 +1,6 @@
 @extends('app.app')
 
 @section('content')
-
 <header class="section-header">
 				<div class="tbl">
 					<div class="tbl-row">
@@ -11,20 +10,21 @@
 	                                Novo campo
 	                            </button>
 								<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-header-add">
-									<input form="myForm" type="button" class="dropdown-item" value="Campo de texto" onclick="addAllInputs('dynamicInputs', 'text');">
-									<input form="myForm" type="button" class="dropdown-item" value="Caixa de texto" onclick="addAllInputs('dynamicInputs', 'textarea');">
-									<input form="myForm" type="button" class="dropdown-item" value="Botão de Selação" onclick="addAllInputs('dynamicInputs', 'checkbox');">
-									<input form="myForm" type="button" class="dropdown-item" value="Botão de Rádio" onclick="addAllInputs('dynamicInputs', 'radio');">
-
+									<a class="dropdown-item" onclick="addAllInputs('dynamicInputs', 'text');"><span class="fa fa-text-width"></span> Campo de texto</a>
+									<a class="dropdown-item" onclick="addAllInputs('dynamicInputs', 'textarea');"><span class="fa fa-text-height"></span> Caixa de texto</a>
+									<a class="dropdown-item" onclick="addAllInputs('dynamicInputs', 'checkbox');"><span class="fa fa-check-square	"></span> Botões de Seleção</a>
+									<a class="dropdown-item" onclick="addAllInputs('dynamicInputs', 'radio');"><span class="fa fa-dot-circle-o"></span> Botões de Rádio</a>
 								</div>
 							</div>
 
-							<h3>Basic Inputs</h3>
-							<ol class="breadcrumb breadcrumb-simple">
-								<li><a href="#">StartUI</a></li>
-								<li><a href="#">Forms</a></li>
-								<li class="active">Basic Inputs</li>
-							</ol>
+							<h3>Configurar Campos</h3>
+			        <ol class="breadcrumb breadcrumb-simple">
+			          <li><a href="{{ route('home') }}">Home</a></li>
+			          <li><a href="{{ route('rotinas.index') }}">Configurar Rotinas</a></li>
+			          <li><a href="">Nome da Rotina</a></li>
+								<li><a href="">Nome da Tarefa</a></li>
+			          <li class="active">Configurar Campos</li>
+			        </ol>
 						</div>
 					</div>
 				</div>
@@ -36,7 +36,15 @@
 									<div class="col-lg-12">
 									<form name="myForm" method="POST">
 										<div id="dynamicInputs">
+											<div class="form-group pull-right">
+																			<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+																				<button type="button" class="btn btn-default-outline"></button>
+																				<span class="input-group-btn-vertical"><button class="btn btn-default bootstrap-touchspin-up" type="button"><i class="glyphicon glyphicon-chevron-up"></i></button><button class="btn btn-default bootstrap-touchspin-down" type="button"><i class="glyphicon glyphicon-chevron-down"></i></button></span>
+																				<button type="button" class="btn btn-default-outline"><i class="glyphicon glyphicon-search" aria-hidden="true"></i></button>
+																				<button type="button" class="btn btn-danger delete">Excluir</button>
 
+																			</div>
+																		</div>
 										</div>
 									</form>
 								</div>
@@ -58,7 +66,26 @@
 			var newdiv = document.createElement('div');
 			switch (inputType) {
 				case 'text':
-					newdiv.innerHTML = /* "Entry " + (counterText + 1) + */ "<fieldset class='form-group col-lg-4'><label class='form-label semibold' for='exampleInput'>First Name</label><input name='text_" + counterText + "' type='text' class='form-control' placeholder='First Name'><small class='text-muted'>We'll never share your email with anyone else.</small><button class='delete'>Delete</button></div>";
+					newdiv.innerHTML = /* "Entry " + (counterText + 1) + */ "<div class='row' id='teste'>" +
+					"<fieldset class='form-group col-lg-4 elemento'>" +
+					 	"<label class='form-label semibold' for='exampleInput'>First Name</label>" +
+						"<input name='text_" + counterText + "' type='text' class='form-control' placeholder='First Name'>" +
+					  "<small class='text-muted'>We'll never share your email with anyone else.</small>" +
+					"</fieldset>" +
+					"<fieldset class='form-group col-lg-4'>" +
+					 	"<label class='form-label semibold' for='exampleInput'>First Name</label>" +
+						"<input name='text_" + counterText + "' type='text' class='form-control' placeholder='First Name'>" +
+					  "<small class='text-muted'>We'll never share your email with anyone else.</small>" +
+					"</fieldset>" +
+					"<fieldset class='form-group col-lg-4'>" +
+					 	"<label class='form-label semibold' for='exampleInput'>First Name</label>" +
+						"<input name='text_" + counterText + "' type='text' class='form-control' placeholder='First Name'>" +
+					  "<small class='text-muted'>We'll never share your email with anyone else.</small>" +
+					"</fieldset>" +
+					"<div class='row'>" +
+						"<fieldset class='form-group col-lg-12'>" +
+							"<button type='button' class='btn btn-inline btn-danger delete pull-right'>Excluir</button>" +
+						"</fieldset> </div> </div></div>";
 					counterText++;
 					break;
 				case 'radio':
@@ -79,7 +106,7 @@
 	</script>
 	<script>
 	$("body").on("click", ".delete", function (e) {
-	$(this).parent("fieldset").remove();
+	document.getElementById("teste").remove();
 });
 	</script>
 

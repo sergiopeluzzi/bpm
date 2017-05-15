@@ -9,10 +9,10 @@
 				<div class="tbl">
 					<div class="tbl-row">
 						<div class="tbl-cell">
-							<h3>Rotinas</h3>
+							<h3>Configurar Rotinas</h3>
 							<ol class="breadcrumb breadcrumb-simple">
 								<li><a href="{{ route('home') }}">Home</a></li>
-								<li class="active">Rotinas</li>
+								<li class="active"> Configurar Rotinas</li>
 							</ol>
 						</div>
             <div class="tbl-cell tbl-cell-action button">

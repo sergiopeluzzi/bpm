@@ -26,6 +26,7 @@
 	<link rel="stylesheet" href="{{ asset('app/css/lib/bootstrap/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('app/css/main.css') }}">
 
+  <!-- Barra superior de loading da página -->
   <script src="{{ asset('app/js/lib/pace/pace.min.js') }}"></script>
   <link rel="stylesheet" href="{{ asset('app/css/lib/pace/pace.min.css') }}">
 
@@ -418,13 +419,15 @@
 				   </span>
          </a>
 			</li>
-			<li class="grey">
-        <a href="{{ route('rotinas.index') }}">
+			<li class="grey with-sub">
 				<span>
-	                <i class="font-icon font-icon-refresh-2"></i>
-	                <span class="lbl">Rotinas</span>
+	        <i class="font-icon font-icon-refresh-2"></i>
+	         <span class="lbl">Rotinas</span>
 				</span>
-      </a>
+				<ul>
+						<li><a href="#"><span class="lbl">Minhas Rotinas</span></a></li>
+						<li><a href="{{ route('rotinas.index') }}"><span class="lbl">Configurar Rotinas</span></a></li>
+				</ul>
 			</li>
 		</ul>
 
