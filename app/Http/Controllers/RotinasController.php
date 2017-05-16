@@ -95,4 +95,9 @@ class RotinasController extends Controller
       return redirect()->route('rotinas.tarefas', $id)->with('data', $data);
 
   }
+
+  public function rotinaExecuta() {
+      $tituloPagina = "Rotinas";
+      return view('app.rotinas.executa')->with('tituloPagina', $tituloPagina);
+  }
 }

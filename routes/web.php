@@ -25,11 +25,7 @@ Route::get('/rotinas/{id}/tarefas', 'RotinasController@tarefas')->name('rotinas.
 Route::get('/rotinas/tarefas/campos', 'RotinasController@campos')->name('rotinas.campos');
 Route::get('/rotinas/{id}/tarefas/nova', 'RotinasController@novaTarefa')->name('rotinas.tarefa_nova');
 Route::post('/rotinas/{id}/tarefas/salvar', 'RotinasController@salvarNovaTarefa')->name('rotinas.salvar_nova_tarefa');
-
-Route::get('/tarefas', 'TarefasController@index')->name('tarefas.index');
-Route::get('/tarefas/nova', 'TarefasController@nova')->name('tarefas.nova');
-Route::get('/tarefas/idTarefa', 'TarefasController@idTarefa')->name('tarefas.idTarefa');
-Route::get('/tarefas/idPassoDaTarefa', 'TarefasController@idPassoDaTarefa')->name('tarefas.idPassoDaTarefa');
+Route::get('/rotinas/{id}/executa', 'RotinasController@rotinaExecuta')->name('rotinas.executa');
 
 Route::get('/relatorios', 'RelatoriosController@index')->name('relatorios.index');
 

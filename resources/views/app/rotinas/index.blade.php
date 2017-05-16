@@ -102,7 +102,9 @@
   						</table>
 
   					</div>
-
+            <nav class="pull-right">
+              {{ $rotinaView->links() }}
+				    </nav>
   				</div><!--.box-typical-body-->
   			</section>
 

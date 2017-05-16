@@ -104,6 +104,7 @@
           </tbody>
         </table>
       </div>
+
     </div><!--.box-typical-body-->
   </section>
 
