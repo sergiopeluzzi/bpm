@@ -9,13 +9,13 @@
 				<div class="tbl">
 					<div class="tbl-row">
 						<div class="tbl-cell">
-							<h3>Configurar Campos</h3>
+							<h3>Nome da Tarefa</h3>
 			        <ol class="breadcrumb breadcrumb-simple">
 			          <li><a href="{{ route('home') }}">Home</a></li>
-			          <li><a href="{{ route('rotinas.index') }}">Configurar Rotinas</a></li>
+			          <li><a href="{{ route('rotinas.index') }}">Rotinas</a></li>
 			          <li><a href="">Nome da Rotina</a></li>
 								<li><a href="">Nome da Tarefa</a></li>
-			          <li class="active">Configurar Campos</li>
+			          <li class="active">Campos</li>
 			        </ol>
 						</div>
 					</div>
@@ -85,12 +85,7 @@
     </div>
     </div>
   </div>
-
-
-
-
 </div>
-
   <div class="clear"></div>
   <div class="row p-r">
     <br>

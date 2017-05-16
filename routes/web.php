@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('app.dashboard');
+  $tituloPagina = "Visão Geral";
+  return view('app.dashboard')->with('tituloPagina', $tituloPagina);
 })->middleware('auth')->name('home');
 
 Route::get('/rotinas', 'RotinasController@index')->name('rotinas.index');

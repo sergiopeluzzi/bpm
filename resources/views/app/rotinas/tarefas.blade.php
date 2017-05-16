@@ -7,10 +7,10 @@
     <div class="tbl-row">
       <div class="tbl-cell">
 
-        <h3>Tarefas</h3>
+        <h3>Nome da Rotina</h3>
         <ol class="breadcrumb breadcrumb-simple">
           <li><a href="{{ route('home') }}">Home</a></li>
-          <li><a href="{{ route('rotinas.index') }}">Configurar Rotinas</a></li>
+          <li><a href="{{ route('rotinas.index') }}">Rotinas</a></li>
           <li><a href="">Nome da Rotina</a></li>
           <li class="active">Tarefas</li>
         </ol>
@@ -29,7 +29,7 @@
     <header class="box-typical-header">
       <div class="tbl-row">
         <div class="tbl-cell tbl-cell-title">
-          <h3>99 rotinas encontradas</h3>
+          <h3>99 tarefas encontradas</h3>
         </div>
         <div class="tbl-cell tbl-cell-action-bordered">
           <button type="button" class="action-btn"><i class="font-icon font-icon-pencil"></i></button>
@@ -54,16 +54,20 @@
                 </div>
               </th>
               <th>ID</th>
-              <th>Nome da rotina</th>
+              <th>Nome da tarefa</th>
               <th>Descrição</th>
               <th class="table-icon-cell">
-                <i class="font-icon font-icon-heart"></i>
+                <i class="font-icon font-icon-comments-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Requer validação para avançar"></i>
               </th>
               <th class="table-icon-cell">
-                <i class="font-icon font-icon-comment"></i>
+                <i class="fa fa-ban" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tarefa obrigatória"></i>
               </th>
-              <th>Criado em</th>
-              <th></th>
+              <th class="table-icon-cell">
+                <i class="font-icon font-icon-clock" data-toggle="tooltip" data-placement="top" title="" data-original-title="Data da última edição"></i>
+              </th>
+              <th class="table-icon-cell">
+                <i class="font-icon font-icon-user" data-toggle="tooltip" data-placement="left" title="" data-original-title="Reponsável pela última edição"></i>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -84,16 +88,16 @@
               </td>
               <td class="color-blue-grey-lighter">  {{ $d->descricao }}</td>
               <td class="table-icon-cell">
-                <i class="font-icon font-icon-heart"></i>
+                <i class="font-icon font-icon-del"></i>
 
               </td>
               <td class="table-icon-cell">
-                <i class="font-icon font-icon-comment"></i>
+                <i class="font-icon font-icon-ok"></i>
 
               </td>
-              <td class="table-date">6 minutes ago <i class="font-icon font-icon-clock"></i></td>
+              <td class="table-date">6 minutes ago</td>
               <td class="table-photo">
-                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Nicholas<br/>Barrett">
+                <img src="{{ asset('app/img/photo-64-1.jpg') }}" alt="" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Nicholas<br/>Barrett">
               </td>
             </tr>
             @endforeach

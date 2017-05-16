@@ -11,7 +11,7 @@
 	<link href="img/favicon.114x114.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
 	<link href="img/favicon.72x72.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
 	<link href="img/favicon.57x57.png" rel="apple-touch-icon" type="image/png">
-	<link href="img/favicon.png" rel="icon" type="image/png">
+	<link href="{{ asset('app/img/favicon.png') }}" rel="icon" type="image/png">
 	<link href="img/favicon.ico" rel="shortcut icon">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -300,7 +300,7 @@
 							</div>
 							<div class="dropdown">
 								<button class="btn btn-rounded dropdown-toggle" id="dd-header-add" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                                Add
+	                                Meus atalhos
 	                            </button>
 								<div class="dropdown-menu" aria-labelledby="dd-header-add">
 									<a class="dropdown-item" href="#">Quant and Verbal</a>
@@ -382,12 +382,12 @@
 								</div>
 							</div>
 							<!--.help-dropdown-->
-							<a class="btn btn-nav btn-rounded btn-inline btn-danger-outline" href="http://themeforest.net/item/startui-premium-bootstrap-4-admin-dashboard-template/15228250?ref=themesanytime">
-	                            Buy Theme
+							<a class="btn btn-nav btn-rounded btn-inline btn-danger-outline" href="">
+	                            Ajuda
 	                        </a>
 							<div class="site-header-search-container">
 								<form class="site-header-search closed">
-									<input type="text" placeholder="Search" />
+									<input type="text" placeholder="Pesquisar" />
 									<button type="submit">
 	                                    <span class="font-icon-search"></span>
 	                                </button>
@@ -410,8 +410,11 @@
 	<div class="mobile-menu-left-overlay"></div>
 	<nav class="side-menu">
 		<ul class="side-menu-list">
-
-			<li class="blue opened">
+      @if ($tituloPagina == 'Visão Geral')
+        <li class="blue opened">
+      @else
+			   <li class="grey">
+      @endif
         <a href="{{ route('home') }}">
 				  <span>
 	           <i class="font-icon font-icon-dashboard"></i>
@@ -419,15 +422,17 @@
 				   </span>
          </a>
 			</li>
-			<li class="grey with-sub">
-				<span>
-	        <i class="font-icon font-icon-refresh-2"></i>
-	         <span class="lbl">Rotinas</span>
-				</span>
-				<ul>
-						<li><a href="#"><span class="lbl">Minhas Rotinas</span></a></li>
-						<li><a href="{{ route('rotinas.index') }}"><span class="lbl">Configurar Rotinas</span></a></li>
-				</ul>
+      @if ($tituloPagina == 'Rotinas')
+        <li class="blue opened">
+      @else
+			   <li class="grey">
+      @endif
+        <a href="{{ route('rotinas.index') }}">
+				  <span>
+	           <i class="font-icon font-icon-refresh-2"></i>
+	           <span class="lbl">Rotinas</span>
+				   </span>
+         </a>
 			</li>
 		</ul>
 

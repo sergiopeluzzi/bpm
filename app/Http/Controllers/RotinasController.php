@@ -17,13 +17,14 @@ class RotinasController extends Controller
 
   public function index()
   {
-      $rotinaView = $this->rotinaDb->paginate(10);
-      return view('app.rotinas.index')->with('rotinaView', $rotinaView);
+      $data['tituloPagina'] = "Rotinas";
+      $data['rotinaView'] = $this->rotinaDb->paginate(10);
+      return view('app.rotinas.index')->with($data);
   }
 
   public function nova(User $user) {
-
-      return view('app.rotinas.nova')->with('users', $user->all());
+      $tituloPagina = "Rotinas";
+      return view('app.rotinas.nova')->with('users', $user->all())->with('tituloPagina', $tituloPagina);
   }
 
   public function criar(Request $request) {
@@ -45,7 +46,7 @@ class RotinasController extends Controller
   }
 
   public function tarefas($id, tarefa $tarefas, rotinaTarefas $rotinaTarefas) {
-
+      $tituloPagina = "Rotinas";
       $rt = $rotinaTarefas->where('rotina_id', $id);
 
       foreach ($rt->get()->all() as $r) {
@@ -60,15 +61,17 @@ class RotinasController extends Controller
 
       ];
 
-      return view('app.rotinas.tarefas')->with('data', $data);
+      return view('app.rotinas.tarefas')->with('data', $data)->with('tituloPagina', $tituloPagina);
   }
 
   public function campos() {
-      return view('app.rotinas.campos');
+      $tituloPagina = "Rotinas";
+      return view('app.rotinas.campos')->with('tituloPagina', $tituloPagina);
   }
 
   public function novaTarefa($id) {
-      return view('app.rotinas.tarefa_nova')->with('idrotina', $id);
+      $tituloPagina = "Rotinas";
+      return view('app.rotinas.tarefa_nova')->with('idrotina', $id)->with('tituloPagina', $tituloPagina);
   }
 
 

@@ -9,10 +9,10 @@
 				<div class="tbl">
 					<div class="tbl-row">
 						<div class="tbl-cell">
-							<h3>Configurar Rotinas</h3>
+							<h3>Rotinas</h3>
 							<ol class="breadcrumb breadcrumb-simple">
 								<li><a href="{{ route('home') }}">Home</a></li>
-								<li class="active"> Configurar Rotinas</li>
+								<li class="active">Rotinas</li>
 							</ol>
 						</div>
             <div class="tbl-cell tbl-cell-action button">
@@ -54,13 +54,17 @@
   									<th>Nome da rotina</th>
   									<th>Descrição</th>
   									<th class="table-icon-cell">
-  										<i class="font-icon font-icon-heart"></i>
+  										<i class="font-icon font-icon-view-rows" data-toggle="tooltip" data-placement="top" title="" data-original-title="Total de execuções da rotina"></i>
   									</th>
   									<th class="table-icon-cell">
-  										<i class="font-icon font-icon-comment"></i>
+  										<i class="font-icon font-icon-users" data-toggle="tooltip" data-placement="top" title="" data-original-title="Usuários com permissão de executar"></i>
   									</th>
-  									<th>Criado em</th>
-  									<th></th>
+  									<th class="table-icon-cell">
+                      <i class="font-icon font-icon-clock" data-toggle="tooltip" data-placement="top" title="" data-original-title="Data da última edição"></i>
+                    </th>
+  									<th class="table-icon-cell">
+                      <i class="font-icon font-icon-user" data-toggle="tooltip" data-placement="left" title="" data-original-title="Reponsável pela última edição"></i>
+                    </th>
   								</tr>
   							</thead>
   							<tbody>
@@ -81,16 +85,16 @@
   									</td>
   									<td class="color-blue-grey-lighter">  {{ $r->descricao }}</td>
   									<td class="table-icon-cell">
-  										<i class="font-icon font-icon-heart"></i>
+  										<i class="font-icon font-icon-view-rows"></i>
   										{{ $r->id_admin }}
   									</td>
   									<td class="table-icon-cell">
-  										<i class="font-icon font-icon-comment"></i>
+  										<i class="font-icon font-icon-users"></i>
                       {{ $r->status }}
   									</td>
-  									<td class="table-date">6 minutes ago <i class="font-icon font-icon-clock"></i></td>
+  									<td class="table-date">6 minutes ago</td>
   									<td class="table-photo">
-  										<img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Nicholas<br/>Barrett">
+  										<img src="{{ asset('app/img/photo-64-1.jpg') }}" alt="" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Nicholas<br/>Barrett">
   									</td>
   								</tr>
                   @endforeach
