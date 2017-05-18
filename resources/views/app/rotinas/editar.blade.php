@@ -12,7 +12,8 @@
 							<h3>Rotinas</h3>
 							<ol class="breadcrumb breadcrumb-simple">
 								<li><a href="{{ route('home') }}">Home</a></li>
-								<li class="active">Rotinas</li>
+                <li><a href="{{ route('rotinas.index') }}">Rotinas</a></li>
+								<li class="active">Editar rotinas</li>
 							</ol>
 						</div>
             <div class="tbl-cell tbl-cell-action button">

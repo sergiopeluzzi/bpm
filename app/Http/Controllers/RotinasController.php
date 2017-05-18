@@ -24,7 +24,7 @@ class RotinasController extends Controller
 
   public function nova(User $user) {
       $tituloPagina = "Rotinas";
-      return view('app.rotinas.nova')->with('users', $user->all())->with('tituloPagina', $tituloPagina);
+      return view('app.rotinas.novaRotina')->with('users', $user->all())->with('tituloPagina', $tituloPagina);
   }
 
   public function criar(Request $request) {
@@ -71,7 +71,7 @@ class RotinasController extends Controller
 
   public function novaTarefa($id) {
       $tituloPagina = "Rotinas";
-      return view('app.rotinas.tarefa_nova')->with('idrotina', $id)->with('tituloPagina', $tituloPagina);
+      return view('app.rotina.novaTarefa')->with('idrotina', $id)->with('tituloPagina', $tituloPagina);
   }
 
 
@@ -92,7 +92,7 @@ class RotinasController extends Controller
 
       ];
 
-      return redirect()->route('rotinas.tarefas', $id)->with('data', $data);
+      return redirect()->route('rotina.index', $id)->with('data', $data);
 
   }
 

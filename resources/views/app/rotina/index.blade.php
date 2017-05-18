@@ -83,7 +83,7 @@
                 {{ $d->id }}
               </td>
               <td>
-                <a href="{{ route('rotina.editar') }}">{{ $d->nome }}</a>
+                <a href="{{ route('rotinas.campos') }}">{{ $d->nome }}</a>
                 <span class="hint-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Help">?</span>
               </td>
               <td class="color-blue-grey-lighter">  {{ $d->descricao }}</td>
