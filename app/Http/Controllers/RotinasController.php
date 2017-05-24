@@ -45,33 +45,27 @@ class RotinasController extends Controller
       return redirect()->route('rotinas.editar.index');
   }
 
-  public function tarefas($id, tarefa $tarefas, rotinaTarefas $rotinaTarefas) {
+  public function tarefasEditar($id, tarefa $tarefas, rotinaTarefas $rotinaTarefas) {
       $tituloPagina = "Rotinas";
       $rt = $rotinaTarefas->where('rotina_id', $id);
-
       foreach ($rt->get()->all() as $r) {
           $tarefa[] = $r->tarefa_id;
       }
-
-
-
       $data = [
           'idrotina' => $id,
           'tarefas' => $tarefas->all(),
-
       ];
-
-      return view('app.rotinas.tarefas')->with('data', $data)->with('tituloPagina', $tituloPagina);
+      return view('app.rotina.editar.index')->with('data', $data)->with('tituloPagina', $tituloPagina);
   }
 
-  public function campos() {
+  public function tarefaEditar() {
       $tituloPagina = "Rotinas";
-      return view('app.rotinas.campos')->with('tituloPagina', $tituloPagina);
+      return view('app.tarefa.editar.index')->with('tituloPagina', $tituloPagina);
   }
 
   public function novaTarefa($id) {
       $tituloPagina = "Rotinas";
-      return view('app.rotina.novaTarefa')->with('idrotina', $id)->with('tituloPagina', $tituloPagina);
+      return view('app.rotina.novaTarefa')->with('tituloPagina', $tituloPagina);
   }
 
 
