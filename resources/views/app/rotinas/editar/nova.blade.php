@@ -12,7 +12,7 @@
         <h3>Nova rotina</h3>
         <ol class="breadcrumb breadcrumb-simple">
           <li><a href="{{ route('home') }}">Home</a></li>
-          <li><a href="{{ route('rotinas.index') }}">Configurar Rotinas</a></li>
+          <li><a href="{{ route('rotinas.editar.nova') }}">Rotinas</a></li>
           <li class="active">Nova rotina</li>
         </ol>
       </div>

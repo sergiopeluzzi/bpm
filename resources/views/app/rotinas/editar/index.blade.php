@@ -1,26 +1,24 @@
 @extends('app.app')
 
+@section('styles')
+
+@endsection
+
 @section('content')
 
 <header class="section-header">
   <div class="tbl">
     <div class="tbl-row">
       <div class="tbl-cell">
-
-        <h3>Nome da Rotina</h3>
+        <h3>Editar Rotinas</h3>
         <ol class="breadcrumb breadcrumb-simple">
           <li><a href="{{ route('home') }}">Home</a></li>
-          <li><a href="{{ route('rotinas.index') }}">Rotinas</a></li>
-          <li><a href="">Nome da Rotina</a></li>
-          <li class="active">Tarefas</li>
+          <li class="active">Editar Rotinas</li>
         </ol>
       </div>
       <div class="tbl-cell tbl-cell-action button">
-    <a href="{{ route('rotina.novaTarefa', $data['idrotina'] )}}" class="btn btn-rounded btn-block">Nova tarefa</a>
+    <a href="{{ route('rotinas.editar.nova') }}" class="btn btn-rounded btn-block">Nova rotina</a>
   </div>
-  <div class="tbl-cell tbl-cell-action button">
-<a href="" class="btn btn-rounded btn-block btn-secondary"><span class="font-icon font-icon-cogwheel"></span></a>
-</div>
     </div>
   </div>
 </header>
@@ -29,7 +27,7 @@
     <header class="box-typical-header">
       <div class="tbl-row">
         <div class="tbl-cell tbl-cell-title">
-          <h3>99 tarefas encontradas</h3>
+          <h3>99 rotinas encontradas</h3>
         </div>
         <div class="tbl-cell tbl-cell-action-bordered">
           <button type="button" class="action-btn"><i class="font-icon font-icon-pencil"></i></button>
@@ -54,13 +52,13 @@
                 </div>
               </th>
               <th>ID</th>
-              <th>Nome da tarefa</th>
+              <th>Nome da rotina</th>
               <th>Descrição</th>
               <th class="table-icon-cell">
-                <i class="font-icon font-icon-comments-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Requer validação para avançar"></i>
+                <i class="font-icon font-icon-view-rows" data-toggle="tooltip" data-placement="top" title="" data-original-title="Total de execuções da rotina"></i>
               </th>
               <th class="table-icon-cell">
-                <i class="fa fa-ban" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tarefa obrigatória"></i>
+                <i class="font-icon font-icon-users" data-toggle="tooltip" data-placement="top" title="" data-original-title="Usuários com permissão de executar"></i>
               </th>
               <th class="table-icon-cell">
                 <i class="font-icon font-icon-clock" data-toggle="tooltip" data-placement="top" title="" data-original-title="Data da última edição"></i>
@@ -71,7 +69,7 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($data['tarefas'] as $d)
+            @foreach ($rotinaView as $r)
             <tr>
               <td class="table-check">
                 <div class="checkbox checkbox-only">
@@ -80,18 +78,20 @@
                 </div>
               </td>
               <td>
-                {{ $d->id }}
+                {{ $r->id }}
               </td>
               <td>
-                <a href="{{ route('rotinas.campos') }}">{{ $d->nome }}</a>
+                <a href="{{ route('rotinas.editar.index', $r->id) }}">{{ $r->nome }}</a>
                 <span class="hint-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Help">?</span>
               </td>
-              <td class="color-blue-grey-lighter">  {{ $d->descricao }}</td>
+              <td class="color-blue-grey-lighter">  {{ $r->descricao }}</td>
               <td class="table-icon-cell">
-                <i class="font-icon font-icon-del"></i>
+                <i class="font-icon font-icon-view-rows"></i>
+                {{ $r->id_admin }}
               </td>
               <td class="table-icon-cell">
-                <i class="font-icon font-icon-ok"></i>
+                <i class="font-icon font-icon-users"></i>
+                {{ $r->status }}
               </td>
               <td class="table-date">6 minutes ago</td>
               <td class="table-photo">
@@ -101,9 +101,17 @@
             @endforeach
           </tbody>
         </table>
-      </div>
 
+      </div>
+      <nav class="pull-right">
+        {{ $rotinaView->links() }}
+      </nav>
     </div><!--.box-typical-body-->
   </section>
+
+
+@endsection
+
+@section('scripts')
 
 @endsection

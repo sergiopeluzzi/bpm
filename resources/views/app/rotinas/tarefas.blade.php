@@ -10,7 +10,7 @@
         <h3>Nome da Rotina</h3>
         <ol class="breadcrumb breadcrumb-simple">
           <li><a href="{{ route('home') }}">Home</a></li>
-          <li><a href="{{ route('rotinas.index') }}">Rotinas</a></li>
+          <li><a href="{{ route('rotinas.editar.index') }}">Rotinas</a></li>
           <li><a href="">Nome da Rotina</a></li>
           <li class="active">Tarefas</li>
         </ol>

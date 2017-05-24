@@ -16,14 +16,15 @@ Route::get('/', function () {
   return view('app.index')->with('tituloPagina', $tituloPagina);
 })->middleware('auth')->name('home');
 
-Route::get('/rotinas', 'RotinasController@index')->name('rotinas.index');
-Route::get('/rotinas/nova', 'RotinasController@nova')->name('rotinas.novaRotina');
+Route::get('/rotinas', 'RotinasController@rotinasExecutar')->name('rotinas.executar.index');
+Route::get('/rotinas/editar', 'RotinasController@rotinasEditar')->name('rotinas.editar.index');
+Route::get('/rotinas/editar/nova', 'RotinasController@nova')->name('rotinas.editar.nova');
 Route::post('rotinas/criar', 'RotinasController@criar')->name('rotinas.criar');
 
 Route::get('/rotinas/atualiza/{id}', 'RotinasController@atualiza')->name('rotinas.atualiza');
 Route::put('/rotinas/atualizar/{id}', 'RotinasController@atualizar')->name('rotinas.atualizar');
 //
-Route::get('/rotina/{id}', 'RotinasController@tarefas')->name('rotina.index');
+Route::get('/rotina/{id}/editar', 'RotinasController@tarefas')->name('rotina.index');
 Route::get('/rotina/ID/tarefa/ID/editar', 'RotinasController@campos')->name('rotina.editar');
 
 Route::get('/rotina/{id}/nova', 'RotinasController@novaTarefa')->name('rotina.novaTarefa');

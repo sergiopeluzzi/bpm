@@ -15,22 +15,22 @@ class RotinasController extends Controller
       $this->rotinaDb = $rotina;
   }
 
-  public function index()
+  public function rotinasEditar()
   {
       $data['tituloPagina'] = "Rotinas";
       $data['rotinaView'] = $this->rotinaDb->paginate(10);
-      return view('app.rotinas.index')->with($data);
+      return view('app.rotinas.editar.index')->with($data);
   }
 
   public function nova(User $user) {
       $tituloPagina = "Rotinas";
-      return view('app.rotinas.novaRotina')->with('users', $user->all())->with('tituloPagina', $tituloPagina);
+      return view('app.rotinas.editar.nova')->with('users', $user->all())->with('tituloPagina', $tituloPagina);
   }
 
   public function criar(Request $request) {
       $rotinaCriar = $request->all();
       $this->rotinaDb->create($rotinaCriar);
-      return redirect()->route('rotinas.index');
+      return redirect()->route('rotinas.editar.index');
   }
 
   public function atualiza($id){
@@ -42,7 +42,7 @@ class RotinasController extends Controller
       $dadosForm = $request->all();
       $rotinaAtualizar = $this->rotinaDb->find($id);
       $rotinaAtualizar->update($dadosForm);
-      return redirect()->route('rotinas.index');
+      return redirect()->route('rotinas.editar.index');
   }
 
   public function tarefas($id, tarefa $tarefas, rotinaTarefas $rotinaTarefas) {
@@ -96,8 +96,8 @@ class RotinasController extends Controller
 
   }
 
-  public function rotinaExecuta() {
+  public function rotinasExecutar() {
       $tituloPagina = "Rotinas";
-      return view('app.rotinas.executa')->with('tituloPagina', $tituloPagina);
+      return view('app.rotinas.executar.index')->with('tituloPagina', $tituloPagina);
   }
 }

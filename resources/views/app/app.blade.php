@@ -427,7 +427,7 @@
       @else
 			   <li class="grey">
       @endif
-        <a href="{{ route('rotinas.index') }}">
+        <a href="{{ route('rotinas.executar.index') }}">
 				  <span>
 	           <i class="font-icon font-icon-refresh-2"></i>
 	           <span class="lbl">Rotinas</span>
