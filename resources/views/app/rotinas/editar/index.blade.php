@@ -1,4 +1,4 @@
-@extends('app.app')
+@extends('app.layouts.master')
 
 @section('styles')
 
@@ -60,9 +60,7 @@
               <th class="table-icon-cell">
                 <i class="font-icon font-icon-users" data-toggle="tooltip" data-placement="top" title="" data-original-title="Usuários com permissão de executar"></i>
               </th>
-              <th class="table-icon-cell">
-                <i class="font-icon font-icon-clock" data-toggle="tooltip" data-placement="top" title="" data-original-title="Data da última edição"></i>
-              </th>
+              <th>Última edição</th>
               <th class="table-icon-cell">
                 <i class="font-icon font-icon-user" data-toggle="tooltip" data-placement="left" title="" data-original-title="Reponsável pela última edição"></i>
               </th>
@@ -81,7 +79,7 @@
                 {{ $r->id }}
               </td>
               <td>
-                <a href="{{ route('rotina.editar.index', $r->id) }}">{{ $r->nome }}</a>
+                <a href="{{ route('rotinas.editar.rotina', $r->id) }}">{{ $r->nome }}</a>
                 <span class="hint-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Help">?</span>
               </td>
               <td class="color-blue-grey-lighter">  {{ $r->descricao }}</td>
@@ -93,7 +91,7 @@
                 <i class="font-icon font-icon-users"></i>
                 {{ $r->status }}
               </td>
-              <td class="table-date">6 minutes ago</td>
+              <td class="table-date">{{ $r->updated_at->diffForHumans() }}<i class="font-icon font-icon-clock" data-toggle="tooltip" data-placement="top" title="" data-original-title="Data da última edição"></i></td>
               <td class="table-photo">
                 <img src="{{ asset('app/img/photo-64-1.jpg') }}" alt="" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Nicholas<br/>Barrett">
               </td>

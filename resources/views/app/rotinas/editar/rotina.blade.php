@@ -1,4 +1,4 @@
-@extends('app.app')
+@extends('app.layouts.master')
 
 @section('content')
 
@@ -10,18 +10,14 @@
         <h3>Nome da Rotina</h3>
         <ol class="breadcrumb breadcrumb-simple">
           <li><a href="{{ route('home') }}">Home</a></li>
-          <li><a href="{{ route('rotinas.index') }}">Rotinas</a></li>
+          <li><a href="{{ route('rotinas.editar.index') }}">Rotinas</a></li>
           <li><a href="">Nome da Rotina</a></li>
           <li class="active">Tarefas</li>
         </ol>
       </div>
       <div class="tbl-cell tbl-cell-action button">
-    <a href="{{ route('rotina.novaTarefa', $data['idrotina'] )}}" class="btn btn-rounded btn-block">Nova tarefa</a>
+    <a href="{{ route('tarefas.editar.nova', $data['idrotina'] )}}" class="btn btn-rounded btn-block">Nova tarefa</a>
   </div>
-  <div class="tbl-cell tbl-cell-action button">
-<a href="" class="btn btn-rounded btn-block btn-secondary"><span class="font-icon font-icon-cogwheel"></span></a>
-</div>
-    </div>
   </div>
 </header>
 
@@ -62,9 +58,7 @@
               <th class="table-icon-cell">
                 <i class="fa fa-ban" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tarefa obrigatória"></i>
               </th>
-              <th class="table-icon-cell">
-                <i class="font-icon font-icon-clock" data-toggle="tooltip" data-placement="top" title="" data-original-title="Data da última edição"></i>
-              </th>
+            <th>Última edição</th>
               <th class="table-icon-cell">
                 <i class="font-icon font-icon-user" data-toggle="tooltip" data-placement="left" title="" data-original-title="Reponsável pela última edição"></i>
               </th>
@@ -83,7 +77,7 @@
                 {{ $d->id }}
               </td>
               <td>
-                <a href="{{ route('rotinas.campos') }}">{{ $d->nome }}</a>
+                <a href="{{ route('tarefas.editar.index') }}">{{ $d->nome }}</a>
                 <span class="hint-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Help">?</span>
               </td>
               <td class="color-blue-grey-lighter">  {{ $d->descricao }}</td>
@@ -93,7 +87,7 @@
               <td class="table-icon-cell">
                 <i class="font-icon font-icon-ok"></i>
               </td>
-              <td class="table-date">6 minutes ago</td>
+              <td class="table-date">{{ $d->updated_at->diffForHumans() }}<i class="font-icon font-icon-clock" data-toggle="tooltip" data-placement="top" title="" data-original-title="Data da última edição"></i></td>
               <td class="table-photo">
                 <img src="{{ asset('app/img/photo-64-1.jpg') }}" alt="" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Nicholas<br/>Barrett">
               </td>

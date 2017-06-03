@@ -7,6 +7,7 @@ use App\tarefa;
 use App\User;
 use Illuminate\Http\Request;
 use App\rotina;
+use Carbon\Carbon;
 
 class RotinasController extends Controller
 {
@@ -55,17 +56,17 @@ class RotinasController extends Controller
           'idrotina' => $id,
           'tarefas' => $tarefas->all(),
       ];
-      return view('app.rotina.editar.index')->with('data', $data)->with('tituloPagina', $tituloPagina);
+      return view('app.rotinas.editar.rotina')->with('data', $data)->with('tituloPagina', $tituloPagina);
   }
 
   public function tarefaEditar() {
       $tituloPagina = "Rotinas";
-      return view('app.tarefa.editar.index')->with('tituloPagina', $tituloPagina);
+      return view('app.tarefas.editar.index')->with('tituloPagina', $tituloPagina);
   }
 
   public function novaTarefa($id) {
       $tituloPagina = "Rotinas";
-      return view('app.rotina.novaTarefa')->with('tituloPagina', $tituloPagina);
+      return view('app.tarefas.editar.nova')->with('tituloPagina', $tituloPagina);
   }
 
 
@@ -86,12 +87,12 @@ class RotinasController extends Controller
 
       ];
 
-      return redirect()->route('rotina.index', $id)->with('data', $data);
+      return redirect()->route('rotinas.editar.rotina', $id)->with('data', $data);
 
   }
 
   public function rotinasExecutar() {
       $tituloPagina = "Rotinas";
-      return view('app.rotinas.executar.index')->with('tituloPagina', $tituloPagina);
+      return view('app.rotinas.index')->with('tituloPagina', $tituloPagina);
   }
 }

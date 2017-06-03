@@ -1,4 +1,4 @@
-@extends('app.app')
+@extends('app.layouts.master')
 
 @section('styles')
 
